@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'opensans_condbold';
+  src: url('files/opensans_condbold.eot');
+  src: url('files/opensans_condbold.eot?#iefix') format('embedded-opentype'), url('files/opensans_condbold.woff') format('woff'), url('files/opensans_condbold.ttf') format('truetype'), url('files/opensans_condbold.svg#opensans_condbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

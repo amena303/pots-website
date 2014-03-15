@@ -1,0 +1,192 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_anuncio
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			//display: none !important;
+			//width: 100% !important;
+			//margin: 0px 0px 0px auto !important;
+			//margin-left: auto !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+		.anuncio
+		{
+			position: relative;
+			display: block;
+			text-align: left;
+			//margin: -35px 0 0;
+/*
+			.slider_REAL
+			{
+				.block(auto, auto, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+			}
+			.slider_LARGE
+			{
+				.block(960px, 90px, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+			}
+			.slider_MID
+			{
+				.block(100%, 90px, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+			}
+			.slider_MIN
+			{
+				.block(100%, 150px, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+			}
+			.slider_THUMB
+			{
+				.block(100%, 150px, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+			}
+
+*/
+			.pagina_grid
+			{
+				.inline-block(auto, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 10px 0px 10px);
+			}
+
+			.slider
+			{
+				.block(100%, auto, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+				position: relative;
+				list-style: none;
+				overflow: hidden;
+				li
+				{
+					.block(100%, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+					position: absolute;
+					display: none;
+					left: 0;
+					top: 0;
+					.pagina
+					{
+						.block(100%, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						position: relative;
+						text-align: center;
+
+						a
+						{
+							.block(100%, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+						.img
+						{
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-color: transparent;
+						}
+
+/*
+						.img_REAL
+						{
+							.inline-block(auto, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+						.img_LARGE
+						{
+							.inline-block(960px, 90px, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+						.img_MID
+						{
+							.inline-block(720px, 90px, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+						.img_MIN
+						{
+							.inline-block(420px, 150px, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+						.img_THUMB
+						{
+							.inline-block(120px, 72px, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						}
+*/
+
+						//--
+						.contenido
+						{
+							.block(100%, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+							float: left;
+							.titulo
+							{
+								.block(auto, 30px, 15px, transparent, @color_enlace_normal, 35px 0 10px 10px, 0px);
+								overflow: hidden;
+								position: relative;
+								text-align: left;
+								.texto
+								{
+									//.block(auto, 30px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+									overflow: hidden;
+								}
+							}
+							.resumen
+							{
+								.block(auto, 60px, 15px, trasparent, @color_texto, 0 0 0 10px, 0px);
+								overflow: hidden;
+								position: relative;
+								text-align: justify;
+								.texto
+								{
+									//.block(auto, 60px, 15px, trasparent, @color_texto, 0px, 0px);
+									overflow: hidden;
+								}
+							}
+							.leermas
+							{
+								.block(auto, 15px, 15px, trasparent, @color_enlace_normal, 10px 0, 0px);
+								overflow: hidden;
+								position: relative;
+								text-align: right;
+								.texto
+								{
+									//.block(auto, 20px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+									overflow: hidden;
+								}
+							}
+						}
+					}
+				}
+				li:first-child
+				{
+					position: relative;
+					display: block;
+					float: left;
+				}
+			}
+			//.control
+			//{
+				//ul.tabs
+				ul.rslides_tabs
+				{
+					position: absolute;
+					right: 0px;
+					bottom: 0px;
+					z-index: 2;
+					.block(auto, auto, 0px, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+					text-align: center;
+					li.rslides_here
+					{
+						a
+						{
+							border: 0px solid transparent;
+							background-color: @color_titulo;
+						}
+					}
+					li
+					{
+						.inline-block(auto, auto, 0px, transparent, transparent, 0px 6px 0px 0px, 0px);
+						a
+						{
+							.block(10px, 10px, 0px, @color_texto, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+							border: 0px solid transparent;
+							font-size: 0px;
+							text-decoration: none;
+							outline: none;
+						}
+					}
+					li:first-child
+					{
+						//padding-left: 0px !important;
+					}
+				}
+			//}
+		}
+
+	}

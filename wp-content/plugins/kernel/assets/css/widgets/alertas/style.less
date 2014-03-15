@@ -1,0 +1,142 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_alertas
+	{
+		//color: #000000 !important;
+		background-color: #EBEBEB;
+		border-bottom: 1px solid #DEDEDE;
+		border-left: 1px solid #DEDEDE;
+		border-right: 1px solid #DEDEDE;
+
+		h3.widget-title
+		{
+			//display: none !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+		div.alertas
+		{
+			.block(auto, auto, normal, transparent, transparent, 0px, 0px 0px 0px 0px);
+			overflow: hidden;
+			position: relative;
+
+			.alerta_col
+			{
+				.inline-block(30%, 50px, normal, transparent, #000000, 0px, 0px);
+				.alerta_col_dentro
+				{
+					.block(auto, auto, 40px, transparent, @color_titulo, 0px 0px 0px 0px, 5px 0px);
+					.fuente(@font-helvetica, 20px, normal, normal);
+					text-align: center;
+					p
+					{
+						margin: 0px;
+					}			
+				}
+			}
+
+			.fecha
+			{
+				width: 12%;
+				overflow: hidden;
+				position: relative;
+				.alerta_col_dentro
+				{
+					text-align: center;
+					.ano
+					{
+						.block(auto, auto, 20px, transparent, @color_titulo, 0px 0px 0px 0px, 0px);
+						.fuente(@font-helvetica, 15px, normal, normal);
+					}
+					.mes
+					{
+						.block(auto, auto, 20px, transparent, @color_titulo, 0px 0px 0px 0px, 0px);
+						.fuente(@font-helvetica, 20px, bold, normal);
+					}
+				}
+			}
+
+			.texto
+			{
+				width: 68%;
+				overflow: hidden;
+				position: relative;
+				.alerta_col_dentro
+				{
+					text-align: left;
+					font-size: 18px;
+				}
+			}
+
+			.busqueda
+			{
+				width: 20%;
+				overflow: hidden;
+				position: relative;
+				.alerta_col_dentro
+				{
+					input
+					{
+						margin: 0px;
+					}
+					.gsc-control-cse
+					{
+						border: 0px solid transparent;
+					}
+					.cse .gsc-control-cse, .gsc-control-cse
+					{
+						padding: 0em;
+					}
+					.cse input.gsc-input, input.gsc-input
+					{
+						height: 19px !important;
+						width: 95%;
+						background-position: -45px center !important;
+						//background: url("http://www.google.com/cse/intl/es/images/google_custom_search_watermark.gif") no-repeat scroll -45px center #FFFFFF !important;
+					}
+					.cse .gsc-control-cse, .gsc-control-cse
+					{
+					    background-color: transparent;
+						border: 1px solid transparent;
+					}
+					td.gsc-clear-button
+					{
+						//display: none;
+					}
+					.cse form.gsc-search-box, form.gsc-search-box
+					{
+						margin-bottom: 0px;
+						padding: 0px 0px 0px 0px;
+					}
+
+					.gsc-table-result
+					{
+						line-height: normal;
+					}
+
+
+					#adBlock
+					{
+						display: none;					
+					}
+					.gsc-adBlock
+					{
+						display: none;					
+					}
+					.gsc-adBlockVertical
+					{
+						display: none;					
+					}
+
+					
+					.gcsc-branding
+					{
+						display: none;
+					}
+				}
+			}
+
+
+		}
+
+	}

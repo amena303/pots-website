@@ -1,0 +1,101 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_blog
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			//display: none !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+		ul.blogs_dia
+		{
+			.block(auto, 365px, normal, transparent, transparent, 0px, 0px 0px 0px 0px);
+			overflow: hidden;
+			position: relative;
+			li
+			{
+				.inline-block(100%/3, auto, normal, transparent, #000000, 0px, 0px);
+				position: relative;
+				.blog_dentro
+				{
+
+					.block(auto, auto, normal, transparent, transparent, 0px 5px 0px 5px, 0px);
+
+					.enlace_imagen
+					{
+						.block(auto, 150px, normal, transparent, transparent, 0px 0px 5px 0px, 0px);
+						background-position: center top;
+						background-repeat: no-repeat;
+						text-align: center;
+						img
+						{
+							.block(auto, auto, normal, #777777, transparent, 0px, 0px);
+						}
+					}
+					.enlace_autor
+					{
+						.block(auto, 15px, 15px, transparent, @color_enlace_normal, 0px 0px 5px 0px, 0px);
+						overflow: hidden;
+						position: relative;
+						text-align: center;
+						.texto
+						{
+							//.block(auto, 15px, 15px, trasparent, #148CD1, 0px, 0px);
+							overflow: hidden;
+						}
+					}
+					.enlace_titulo
+					{
+						.block(auto, 30px, 15px, transparent, @color_titulo, 0px 0px 5px 0px, 0px);
+						overflow: hidden;
+						position: relative;
+						.texto
+						{
+							//.block(auto, 30px, 15px, trasparent, @color_titulo, 0px, 0px);
+							overflow: hidden;
+						}
+					}
+					.contenido
+					{
+						.block(auto, 120px, 15px, trasparent, @color_texto, 0px 0px 10px 0px, 0px);
+						overflow: hidden;
+						position: relative;
+						.texto
+						{
+							//.block(auto, 60px, 15px, trasparent, #656565, 0px, 0px);
+							overflow: hidden;
+						}
+					}
+					.leermas
+					{
+						.block(auto, 20px, 15px, trasparent, @color_enlace_normal, 0px 0px 5px 0px, 0px);
+						overflow: hidden;
+						position: relative;
+						text-align: right;
+						.texto
+						{
+							//.block(auto, 20px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+							overflow: hidden;
+						}
+					}
+				}
+			}
+			li:first-child
+			{
+				.blog_dentro
+				{
+					margin: 0px 10px 0px 0px !important;
+				}
+			}
+			li:last-child
+			{
+				.blog_dentro
+				{
+					margin: 0px 0px 0px 10px !important;
+				}
+			}
+		}
+
+	}

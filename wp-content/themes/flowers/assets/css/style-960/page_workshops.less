@@ -1,0 +1,181 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_workshops()
+	{
+
+		//-- 
+		.page-workshops
+		{
+
+			//-- Primary
+			#primary
+			{
+
+				//-- 
+				.workshops
+				{
+					.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 10px 0px 10px 0px);
+
+
+					//-- 
+					.container
+					{
+						margin: 10px auto 10px auto;
+
+						//-- 
+						.indicadores
+						{
+							bottom: inherit;
+							left: 0%;
+							margin: 10px 0px 50px 0px;
+							width: 100%;
+							top: 0px;
+							text-align: center;
+
+							//-- 
+							ol
+							{
+								list-style-type: decimal;
+								-webkit-margin-before: 0em;
+								-webkit-margin-after: 0em;
+								-webkit-margin-start: 0px;
+								-webkit-margin-end: 0px;
+								-webkit-padding-start: 0px;
+								margin: 0px 0px;
+								//-- 
+								li
+								{
+									.inline-block(100%/6, 50px, 50px, transparent, #ffffff, 5px 0px, 0px 0px);
+									vertical-align: middle;
+									text-indent: 0px;
+									position: relative;
+									background-color: #ffffff;
+									border : 0px solid #51439B;
+									span
+									{
+										.inline-block(auto, auto, 25px, transparent, #000000, 0px 0px, 0px 0px);
+										.fuente('opensans_condbold', 22px, normal, normal);
+										position: relative;
+										vertical-align: middle;
+										color: #000000;
+									}
+								}
+								li:hover
+								{
+									span
+									{
+										color : #51439B;
+									}
+								}
+								li.active
+								{
+									background-color: #ffffff;
+									border : 0px solid #51439B;
+									span
+									{
+										color : #51439B;
+									}
+								}
+							}
+						}
+
+						//-- 
+						.item
+						{
+							padding-bottom: 10px;
+							//-- 
+							.thumbnail
+							{
+								.block(204px, 204px, 204px, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+								.borde-radial(204px, 204px, 204px, 204px);
+								border-width: 2px;
+								position: relative;
+								.img
+								{
+									.block(200px, 200px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+									img
+									{
+										.block(200px, 200px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+										.borde-radial(200px, 200px, 200px, 200px);
+									}
+								}
+							}
+							.thumbnail:hover, 
+							.thumbnail:focus 
+							{
+								border-color: #51439B;
+							}
+							.item_title
+							{
+								.block(auto, auto, 35px, transparent, #51439B, 0px auto 0px auto, 10px 0px 10px 0px);
+								.fuente('opensans_condbold', 33px, normal, normal);						
+								text-transform: uppercase;
+							}
+							.item_text
+							{
+								.block(auto, auto, 30px, transparent, #231F20, 0px auto 0px auto, 0px 0px);
+								.fuente('opensans_condlight', 24px, normal, normal);							
+							}
+							.item_data
+							{
+								.block(auto, auto, 30px, transparent, #231F20, 0px auto 0px auto, 10px 0px 0px 0px);
+								.fuente('opensans_condlight', 24px, normal, normal);
+								//-- 
+								.dato
+								{
+									.block(auto, auto, normal, transparent, #231F20, 0px auto 0px auto, 0px 0px 0px 0px);
+									.etiqueta
+									{
+										.inline-block(50px, 30px, 30px, transparent, #51439B, 0px auto 0px auto, 0px 0px);
+										.fuente('opensans_condlight', 22px, normal, normal);
+										text-decoration: underline;
+										text-align: left;
+									}
+									.informacion
+									{
+										.inline-block(auto, 30px, 30px, transparent, #231F20, 0px auto 0px auto, 0px 0px);
+										.fuente('opensans_condlight', 22px, normal, normal);							
+										text-align: left;
+									}
+								}
+							}
+							.botones
+							{
+								.block(auto, auto, normal, transparent, #000000, 10px auto 0px auto, 0px 0px);
+								text-align: right;
+								//-- 
+								.btn-rsvp
+								{
+									.inline-block(auto, 40px, 40px, transparent, #231F20, 0px auto 0px auto, 0px 10px);
+									.fuente('opensans_condlight', 20px, normal, normal);
+								}
+								.btn-download
+								{
+									.inline-block(auto, 40px, 40px, transparent, #231F20, 0px auto 0px auto, 0px 10px);
+									.fuente('opensans_condlight', 20px, normal, normal);
+								}
+								//-- 
+								.btn-morado();
+								.btn-blanco();
+							}
+						}
+					}
+				}
+
+
+			}
+
+			//-- Secondary
+			#secondary
+			{
+			}
+		}
+
+	}

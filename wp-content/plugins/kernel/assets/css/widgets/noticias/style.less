@@ -1,0 +1,207 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_noticias
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			display: none !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+
+		.noticias:hover
+		{
+			.rslides_nav
+			{
+				opacity: 0.7;
+			}
+		}
+
+		.noticias
+		{
+			position: relative;
+			display: block;
+			.slider
+			{
+				.block(100%, auto, normal, transparent, transparent, 0px auto 0px auto, 0px 0px 0px 0px);
+				position: relative;
+				list-style: none;
+				overflow: hidden;
+				li
+				{
+					.block(100%, 400px, 100%, #FFFFFF, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+					position: absolute;
+					display: none;
+					left: 0;
+					top: 0;
+					.imagen
+					{
+						//.block(100%, 260px, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						.block(100%, auto, normal, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+						position: absolute;
+						//position: relative;
+						top: 0px;
+						left: 0px;
+						border: 0;
+					}
+					.pie
+					{
+						background: #000;
+						//.block(auto, 140px, normal, rgba(0, 0, 0, 0.70), transparent, 0px 0px 0px 0px, 10px 10px 10px 10px);
+						.block(auto, 120px, normal, #000, transparent, 0px 0px 0px 0px, 10px 10px 10px 10px);
+						overflow: hidden;
+						position: absolute;
+						//position: relative;
+						left: 0px;
+						bottom: 0px;
+						.titulo
+						{
+							.block(auto, 40px, 20px, trasparent, #FFFFFF, 0px, 0px);
+							overflow: hidden;
+							position: relative;
+							text-align: center;
+							.texto
+							{
+								//.block(auto, 20px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+								overflow: hidden;
+								font-family: @font-helvetica;
+								font-size: 20px;
+								//font-weight: bold;
+								overflow: hidden;
+								position: relative;
+								text-align: center;
+								color: #FFFFFF;
+								vertical-align: middle;
+
+							}
+						}
+						.resumen
+						{
+							.block(auto, 60px, 20px, trasparent, #FFFFFF, 0px, 0px);
+							overflow: hidden;
+							position: relative;
+							text-align: left;
+							.texto
+							{
+								.block(100%, 100%, 20px, trasparent, #FFFFFF, 0px, 0px);
+								overflow: hidden;
+							}
+							a
+							{
+								outline: 0 !important;
+								//color: @color_enlace_normal;
+								text-decoration: none;
+							}
+							a:hover
+							{
+								outline: 0 !important;
+								color: @color_enlace_sobre !important;
+								//text-decoration: underline;
+							}
+						}
+						.leermas
+						{
+							.block(auto, 20px, 20px, trasparent, @color_enlace_normal, 0px, 0px);
+							overflow: hidden;
+							position: relative;
+							text-align: right;
+							.texto
+							{
+								//.block(auto, 20px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+								overflow: hidden;
+								color: #FFFFFF;
+							}
+							a
+							{
+								outline: 0 !important;
+								//color: @color_enlace_normal;
+								text-decoration: none;
+							}
+							a:hover
+							{
+								outline: 0 !important;
+								//color: @color_enlace_sobre;
+								text-decoration: underline;
+							}
+						}
+						//z-index: 1;
+					}
+				}
+				li:first-child
+				{
+					position: relative;
+					display: block;
+					float: left;
+				}
+			}
+			//.control
+			//{
+				//ul.tabs
+				ul.rslides_tabs
+				{
+					position: absolute;
+					right: 0px;
+					bottom: 140px;
+					z-index: 2;
+					.block(auto, auto, 0px, transparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+					text-align: right;
+					li.rslides_here
+					{
+						a
+						{
+							border: 0px solid transparent;
+							background-color: @color_titulo;
+						}
+					}
+					li
+					{
+						.inline-block(auto, auto, 0px, transparent, transparent, 0px 0px 0px 0px, 0px 6px 5px 0px);
+						a
+						{
+							.block(10px, 10px, 0px, @color_texto, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+							border: 0px solid transparent;
+							font-size: 0px;
+							text-decoration: none;
+							outline: none;
+						}
+					}
+					li:first-child
+					{
+						//padding-left: 0px !important;
+					}
+				}
+
+				.rslides_nav
+				{
+					position: absolute;
+					-webkit-tap-highlight-color: rgba(0,0,0,0);
+					top: 37%;
+					left: 0;
+					opacity: 0.0;
+					z-index: 3;
+					text-indent: -9999px;
+					overflow: hidden;
+					text-decoration: none;
+					height: 51px;
+					width: 38px;
+					background: transparent url("../../../img/themes.gif") no-repeat left center;
+					margin-top: -45px;
+				}
+				.rslides_nav:hover {
+					opacity: 0.7;
+				}
+				.rslides_nav:active {
+					opacity: 1.0;
+				}
+
+				.rslides_nav.next {
+					left: auto;
+					background-position: right center;
+					right: 0;
+				}
+
+			//}
+		}
+
+	}

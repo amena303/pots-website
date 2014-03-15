@@ -1,0 +1,120 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_programa
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			//display: none !important;
+			//width: 55% !important;
+			//margin: 0px 0px 0px 0px !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+		.programa
+		{
+
+			.superior
+			{
+				.clearfix();
+				background-color: lighten(@color_texto, 50%);
+				//height: 60px;
+
+				.izquierda
+				{
+					float: left;
+					.block(50%, 60px, normal, trasparent, transparent, 0px 0px 0px 0px, 0px 0px 0px 0px);
+					overflow: hidden;
+					a
+					{
+						.inline-block(auto, auto, auto, trasparent, transparent, 0px 0px 0px 0px, 5px 5px 5px 5px);
+						img
+						{
+							vertical-align: middle;
+						}
+						&:hover
+						{
+							background-color: lighten(@color_texto, 30%);
+						}
+						&:first-child
+						{
+							//padding-left: 10px !important;
+						}
+						&:last-child
+						{
+							//padding-right: 10px !important;
+						}
+					}
+				}
+				.derecha
+				{
+					float: left;
+					.block(50%, auto, auto, trasparent, @color_texto, 0px 0px 0px 0px, 0px);
+					.fecha
+					{
+						.block(auto, 20px, 20px, trasparent, darken(@color_enlace_normal, 10%), 5px 0px 0px 0px, 0px 15px 0px 0px);
+						font-weight: bold;
+						text-align: right;
+						.texto
+						{
+							overflow: hidden;
+						}
+					}
+					.programa_padre
+					{
+						.block(auto, 30px, 30px, trasparent, @color_enlace_normal, 0px 0px 5px 0px, 0px 15px 0px 0px);
+						font-size: 15px;
+						font-weight: bold;
+						text-align: right;
+						.texto
+						{
+							overflow: hidden;
+						}
+					}
+				}
+			}
+			.inferior
+			{
+				.linea
+				{
+					.block(100%, 30px, 30px, trasparent, @color_titulo, 0px 0px 0px 0px, 0px);
+					.clearfix();
+					.etiqueta
+					{
+						.block(17%, 30px, 30px, trasparent, @color_titulo, 0px 0px 0px 0px, 0px);
+						font-weight: bold;
+						float: left;
+					}
+
+					.valor
+					{
+						.block(83%, 30px, 30px, trasparent, @color_titulo, 0px 0px 0px 0px, 0px);
+						overflow: hidden;
+						float: left;
+						.texto
+						{
+							overflow: hidden;
+						}
+					}
+				}
+				.audio
+				{
+					.block(auto, 30px, 30px, trasparent, @color_titulo, 0px 0px 0px 0px, 0px);
+					.mejs-container
+					{
+						margin: 0px auto;
+					}
+				}
+				.invitado
+				{
+					margin: 0px 0px 0px 0px;
+				}
+				.tema
+				{
+					margin: 0px 0px 0px 0px;
+				}
+			}
+
+
+		}
+	}

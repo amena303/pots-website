@@ -1,0 +1,122 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_blog()
+	{
+
+		//-- 
+		.page-blog
+		{
+
+			//-- Secondary
+			#secondary
+			{
+				//margin-top: 20px;
+				aside.about
+				{
+					.widget-title 
+					{
+						.block(auto, auto, 1.6363636363, transparent, #51439B, 0px auto 0px 0px, 0px 0px);
+						.fuente('opensans_condbold', 16px, 900, normal);
+					}
+					.textwidget
+					{
+						.block(auto, auto, normal, transparent, #231F20, 0px auto, 0px 0px);
+						.fuente('opensans_condlight', 18px, normal, normal);
+					}
+				}
+			}
+
+			//-- Primary
+			#primary
+			{
+
+				//-- 
+				.posts
+				{
+					.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 0px 0px 10px 0px);
+
+					//-- 
+					.container
+					{
+						margin: 0px auto 10px auto;
+
+						//-- 
+						.item
+						{
+							padding-bottom: 10px;
+							//-- IZQ
+							.fecha
+							{
+								.block(auto, auto, normal, transparent, #8D8F92, 0px auto 0px auto, 0px 0px 0px 0px);
+								.fuente('opensans_condbold', 33px, normal, normal);
+								text-align: center;
+								border-right: 1px solid #8D8F92;
+								border-bottom: 1px solid #8D8F92;
+							}
+							//-- DER
+							.thumbnail
+							{
+								.block(654px, 404px, 404px, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+								.borde-radial(0px, 0px, 0px, 0px);
+								border-width: 2px;
+								position: relative;
+								.img
+								{
+									.block(650px, 400px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+									img
+									{
+										.block(650px, 400px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+										.borde-radial(0px, 0px, 0px, 0px);
+									}
+								}
+							}
+							.thumbnail:hover, 
+							.thumbnail:focus 
+							{
+								border-color: #51439B;
+							}
+							.item_title
+							{
+								.block(auto, auto, 45px, transparent, #51439B, 0px auto 0px auto, 0px 0px 0px 0px);
+								.fuente('opensans_condbold', 33px, normal, normal);
+								//text-transform: uppercase;
+							}
+							.item_meta
+							{
+								.block(auto, auto, 40px, transparent, #7a7c7e, 0px auto 0px auto, 0px 0px);
+								.fuente('opensans_condlight', 20px, normal, normal);
+							}
+							.item_text
+							{
+								.block(auto, auto, 25px, transparent, #231F20, 0px auto 0px auto, 0px 0px);
+								.fuente('opensans_condlight', 20px, normal, normal);
+							}
+							.botones
+							{
+								.block(auto, auto, normal, transparent, #000000, 10px auto 0px auto, 0px 0px);
+								text-align: left;
+								//-- 
+								.btn-readmore
+								{
+									.inline-block(auto, 40px, 40px, transparent, #231F20, 0px auto 0px auto, 0px 10px);
+									.fuente('opensans_condlight', 20px, normal, normal);
+								}
+								//-- 
+								.btn-morado();
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'opensans_condlight';
+  src: url('files/opensans_condlight.eot');
+  src: url('files/opensans_condlight.eot?#iefix') format('embedded-opentype'), url('files/opensans_condlight.woff') format('woff'), url('files/opensans_condlight.ttf') format('truetype'), url('files/opensans_condlight.svg#opensans_condlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

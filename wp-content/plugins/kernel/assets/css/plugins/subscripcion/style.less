@@ -1,0 +1,244 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	// CSS for Timepicker
+	.ui-timepicker-div
+	{
+		.ui-widget-header
+		{
+			margin-bottom: 8px;
+		}
+		dl
+		{ 
+			text-align: left;
+			dt
+			{
+				font-size: 10px;
+				height: 25px;
+				margin-bottom: -25px;
+			}
+			dd
+			{
+				font-size: 10px;
+				margin: 0 10px 10px 65px;
+			}
+		}
+		td
+		{
+			font-size: 10px;
+		}
+	}
+	.ui-tpicker-grid-label
+	{
+		background: none;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	// General
+	.ui-datepicker
+	{
+		th
+		{
+			font-weight: normal;
+			text-align: center;
+			font-size: 12px !important;
+		}
+		td
+		{
+			font-size: 12px !important;
+		}
+		.ui-datepicker-header
+		{
+			.ui-datepicker-title
+			{
+				.ui-datepicker-month
+				{
+					height: 25px !important;
+					font-size: 10px !important;
+					font-weight: normal;
+				}
+				.ui-datepicker-year
+				{
+					height: 25px !important;
+					font-size: 10px !important;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+
+	//-- 
+	.form-horizontal
+	{
+		//.fuente('helvetica_neue', 20px, normal, normal);
+
+		.control-label
+		{
+			margin: 0px 0px 0px auto;
+		}
+
+		.show-grid
+		{
+			margin-bottom: 10px;
+		}
+		.form-group
+		{
+			position: relative;
+			border: 0px solid transparent;
+			margin: 0px;
+			text-align: left;
+			padding-top: 0px;
+			.form-control
+			{
+				font-size: 20px;
+			}
+
+			em.has-error
+			{
+				position: absolute;
+				text-indent: 0px;
+				width: auto; 
+				color: #BC5050; 
+				height: auto; 
+				line-height: normal; 
+				right: 0px; 
+				display: block; 
+				bottom: -15px; 
+				font-size: 20px; 
+				font-style: normal;
+				display: none !important;
+				input
+				{
+					color: #B94A48 !important;
+				}
+			}
+
+			.control-label
+			{
+				letter-spacing: 0px;
+				color: @brand-primary;
+				//.fuente('\'lucida grande\',tahoma,verdana,arial,sans-serif', 11px, normal, normal);
+				text-align: right;
+
+				.msg_normal
+				{
+					
+				}
+				.msg_menor
+				{
+					display: none;
+					font-size: 11px;
+				}
+				.msg_chiquito
+				{
+					font-size: 10px;
+				}
+				.txt_min
+				{
+					font-size: 9px;
+				}
+			}
+			.form-control
+			{
+				//.fuente('\'lucida grande\',tahoma,verdana,arial,sans-serif', 11px, normal, normal);
+				//.fuente('helvetica_neue', 11px, normal, normal);
+				//height: 25px;
+				//line-height: 25px;
+				padding: 2px 4px;
+			}
+		}
+		.has-error
+		{
+			.control-label 
+			{
+				color: #980A05;
+			}
+		}
+		.has-success
+		{
+			.control-label 
+			{
+				color: #006C02;
+			}
+		}
+
+		input
+		, textarea
+		{
+			background-color: #E6E7E8;
+		}
+
+
+		textarea
+		{
+			height: 208px;
+		}
+
+	}
+
+	.btn-aceptar
+	{
+		//.fuente('helvetica_neue_ltstdmdcno', 25px, normal, normal);
+		// .fuente('helvetica_neue', 20px, normal, normal);
+		// width: 50%;
+		// margin: 0px auto;
+	}
+
+	@media screen and (min-width: 0px) and (max-width: 480px)
+	{
+		.ui-timepicker-div
+		{
+			.ui-widget-header
+			{
+			}
+			dl
+			{
+				dt
+				{
+					font-size: 9px;
+				}
+				dd
+				{
+					font-size: 9px;
+				}
+			}
+			td
+			{
+				font-size: 9px;
+			}
+		}
+		.ui-tpicker-grid-label
+		{
+		}
+		// General
+		.ui-datepicker
+		{
+			width: 210px !important;
+			th
+			{
+				font-size: 10px !important;
+			}
+			td
+			{
+				font-size: 9px !important;
+			}
+			.ui-datepicker-header
+			{
+				.ui-datepicker-title
+				{
+					.ui-datepicker-month
+					{
+						font-size: 9px !important;
+					}
+					.ui-datepicker-year
+					{
+						font-size: 9px !important;
+					}
+				}
+			}
+		}
+
+	}
+

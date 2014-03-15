@@ -1,0 +1,33 @@
+.toplevel_page_subscripcion #wpcontent #wpbody-content .filters {
+  width: auto;
+  height: auto;
+  line-height: normal;
+  background-color: transparent;
+  color: #000000;
+  margin: 0px auto 0px auto;
+  padding: 10px 0px 20px 0px;
+  display: block;
+  text-align: center;
+}
+.toplevel_page_subscripcion #wpcontent #wpbody-content .filters .nav li {
+  width: auto;
+  height: auto;
+  line-height: normal;
+  background-color: transparent;
+  color: #000000;
+  margin: 0px auto 0px auto;
+  padding: 10px 0px 20px 0px;
+  text-align: top;
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: none;
+}
+.toplevel_page_subscripcion #wpcontent #wpbody-content .filters .tab-content .fechas {
+  text-align: center;
+  padding: 10px 0px;
+}
+.toplevel_page_subscripcion #wpcontent #wpbody-content .filters .tab-content .fechas .input-daterange {
+  margin: 0px auto;
+}

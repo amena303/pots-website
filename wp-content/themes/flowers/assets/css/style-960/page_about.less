@@ -1,0 +1,111 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_about()
+	{
+
+		//-- 
+		.page-about
+		{
+
+			//-- Primary
+			#primary
+			{
+				//width : 1024px;
+
+				//-- 
+				.content-area
+				{
+					.site-area
+					{
+						article
+						{
+							.entry-content
+							{
+								padding: 0px 25px 25px 25px;
+							}
+						}
+					}
+				}
+
+				//-- 
+				.team
+				{
+					.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 10px 0px 10px 0px);
+					text-align: center;
+					//-- 
+					.item
+					{
+						.inline-block(25%, auto, 25px, transparent, #231F20, 0px auto 0px auto, 0px 15px 15px 15px);
+						float: none;
+						//-- 
+						a.thumbnail
+						{
+							.block(204px, 204px, 204px, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+							.borde-radial(204px, 204px, 204px, 204px);
+							border-width: 2px;
+							position: relative;
+							.img
+							{
+								.block(200px, 200px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+								img
+								{
+									.block(200px, 200px, normal, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+									.borde-radial(200px, 200px, 200px, 200px);
+								}
+								img.grayscale
+								{
+									display: block;									
+								}
+								img.color
+								{
+									display: none;
+								}
+							}
+						}
+						.thumbnail:hover, 
+						.thumbnail:focus 
+						{
+							border-color: #51439B;
+							.img
+							{
+								img.grayscale
+								{
+									display: none;									
+								}
+								img.color
+								{
+									display: block;
+								}
+							}
+						}
+						.item_title
+						{
+							.block(auto, 30px, 30px, transparent, #231F20, 0px auto 0px auto, 0px 0px 0px 0px);
+							.fuente('opensans_condlight', 22px, normal, normal);
+							overflow: hidden;					
+						}
+						.item_text
+						{
+							.block(auto, 50px, 25px, transparent, #51439B, 0px auto 0px auto, 0px 0px 0px 0px);
+							.fuente('opensans_condlight', 21px, normal, normal);
+							overflow: hidden;
+						}
+					}
+				}
+
+			}
+
+			//-- Secondary
+			#secondary
+			{
+			}
+		}
+
+	}

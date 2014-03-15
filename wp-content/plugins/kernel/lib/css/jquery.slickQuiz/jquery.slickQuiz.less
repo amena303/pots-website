@@ -1,0 +1,345 @@
+
+//-- Variables generales
+@import "../mixins.less";
+
+.quized
+{
+	.block(100%, 100%, normal, transparent, transparent, 0px auto, 0px);
+	position: relative;
+
+
+	.quizName
+	{
+		display: none !important;
+	}
+
+
+	.quizIntro
+	{
+		.block(100%, auto, normal, transparent, transparent, 0px auto, 0px);
+		li.intro
+		{
+			.block(800px, auto, normal, transparent, transparent, 0px, 0px);
+			//background-image: url('@{RUTA_img_960}misc/preguntas_bgd.png');
+			background-repeat: no-repeat;
+			background-position: 0px 0px;
+
+			position: relative;
+			// top: 310px;
+			// left: 0px;
+
+			h3
+			{
+				.block(auto, auto, normal, transparent, #000000, 0px, 0px);
+				.fuente("helvetica", 26px, bold, normal);
+				text-transform: uppercase;
+				//display: none !important;
+			}
+		}
+	}
+
+
+	.quizArea
+	{
+		.block(100%, 100%, normal, transparent, transparent, 0px auto, 0px);
+		position: relative;
+
+		.quizHeader
+		{
+			.block(100%, 100%, normal, transparent, transparent, 0px auto, 0px);
+			position: relative;
+			//top: 0px;
+			//left: 0px;
+
+			.iniQuiz
+			{
+				//.block(447px, 659px, normal, transparent, transparent, 0px auto, 0px 0px);
+				//.block(100%, 100%, normal, transparent, transparent, 0px auto, 0px 0px);
+				//position: relative;
+				//left: 531px;
+				//top: 400px;
+
+				//background-image: url('@{RUTA_img_960}quiz/second.jpg');
+				//background-repeat: no-repeat;
+				//background-position: center center;
+
+				z-index: 1;
+			}
+		}
+
+		.questions
+		{
+			.block(100%, 100%, normal, transparent, transparent, 0px auto, 0px);
+
+			#question1
+			{
+				h3
+				{
+					//padding: 50px 0px 0px 45px !important;
+				}
+			}
+
+			#question5
+			{
+				h3
+				{
+					//padding: 50px 0px 0px 45px !important;
+				}
+			}
+
+			li.question
+			{
+				.block(800px, 270px, normal, transparent, transparent, 0px, 0px);
+				//background-image: url('@{RUTA_img_960}misc/preguntas_bgd.png');
+				background-repeat: no-repeat;
+				background-position: 0px 0px;
+
+				// position: absolute;
+				// top: 310px;
+				// left: 0px;
+
+				.questionCount
+				{
+					display: none !important;
+				}
+
+				h3
+				{
+					.etiqueta
+					{
+						//display: none;
+					}
+					.block(auto, auto, normal, transparent, #000000, 0px, 0px);
+					.fuente("helvetica", 30px, bold, normal);
+					text-transform: uppercase;
+					//display: none !important;
+				}
+
+				ul.answers
+				{
+					.block(auto, auto, normal, transparent, #000000,  0px, 0px);
+
+					li
+					{
+						.block(auto, auto, normal, transparent, #000000, 0px, 0px);
+						.clearfix();
+						overflow: hidden;
+
+						input
+						{
+							.block(20px, auto, normal, transparent, #000000, 0px 0px 0px -20px, 0px);
+							float: left;
+						}
+						label
+						{
+							.block(auto, auto, normal, transparent, #000000, 0px auto, 0px);
+							.fuente("helvetica", 19px, normal, normal);
+							//float: left;
+							overflow: hidden;
+							position: relative;
+							cursor: pointer;
+							//.clearfix();
+
+							.icono
+							{
+								//display: none;
+								.block(30px, 30px, 30px, transparent, #000000, 0px, 0px);
+								float: left;
+								//background-image: url('@{RUTA_img_960}quiz/quiz_respuesta.png');
+								background-repeat: no-repeat;
+								background-position: 0px 0px;
+							}
+							.etiqueta
+							{
+								display: none;
+							}
+							.etiqueta_texto
+							{
+
+								.block(auto, auto, auto, transparent, #000000, 0px auto, 0px);
+								//float: left;
+							}
+							/*
+							img
+							{
+								.block(auto, auto, normal, transparent, #000000, 0px auto, 0px 0px);
+								position: absolute;
+							}
+							&:active
+							{
+								img
+								{
+									top: -100%;
+								}
+							}
+							*/
+						}
+					}
+
+					li
+					{
+						label.sobre
+						{
+							.icono
+							{
+								background-position: 0px -30px;
+							}
+						}
+					}
+
+					li
+					{
+						label.activo
+						{
+							.icono
+							{
+								background-position: 0px -30px;
+							}
+						}
+					}
+				}
+
+				.checkAnswer
+				{
+					//--
+					display: none;
+				}
+			}
+		}
+
+		.questions
+		{
+			li.activo
+			{
+				display: block;
+			}
+		}
+
+		.questions
+		{
+			li.question
+			{
+				display: none;
+			}
+		}
+	}
+
+
+	.quizResults
+	{
+		.block(auto, auto, normal, transparent, #000000, 0px auto, 0px);
+		position: relative;
+
+		.quizResultados
+		{
+			.block(auto, auto, normal, transparent, #000000, 0px auto, 0px);
+			li.resultado
+			{
+				.block(auto, auto, normal, transparent, #000000, 0px, 0px);
+				//background-image: url('@{RUTA_img_960}misc/resultados_bgd.png');
+				background-repeat: no-repeat;
+				background-position: 0px 0px;
+
+				position: relative;
+
+				h3.pregunta_texto
+				{
+					.block(auto, auto, normal, transparent, #000000, 0px, 0px);
+					.fuente("helvetica", 45px, bold, normal);
+					text-transform: uppercase;
+					text-align: center;
+					//display: none !important;
+				}
+
+			}
+		}
+
+		.quizScore
+		{
+			display: none !important;
+		}
+
+		.quizLevel
+		{
+			.block(auto, auto, normal, transparent, #000000, 0px auto, 0px);
+			position: relative;
+
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			z-index: 1;
+		}
+
+		.compartir
+		{
+			//.block(447px, 659px, normal, transparent, transparent, 0px auto, 0px 0px);
+			.block(auto, auto, normal, transparent, #000000, 0px auto, 0px);
+			//right: 0px;
+			//position: absolute;
+			bottom: 10px;
+			//--
+			//background-image: url('@{RUTA_img_960}misc/btn_comparte.png');
+			background-repeat: no-repeat;
+			background-position: center center;
+			//--
+			z-index: 2;
+		}
+		.NIV_1
+		{
+			//background-image: url('@{RUTA_img_960}quiz/R1.png');
+		}
+		.NIV_2
+		{
+			//background-image: url('@{RUTA_img_960}quiz/R2.png');
+		}
+		.NIV_3
+		{
+			//background-image: url('@{RUTA_img_960}quiz/R3.png');
+		}
+		span
+		{
+			//display: none !important;
+		}
+	}
+
+	.quizResults
+	{
+		display: none;
+	}
+}
+
+
+// .quizArea
+// {
+// 	.quizResults
+// 	{
+// 		display: none;
+// 	}
+// }
+
+.iniQuiz,
+.nextQuestion,
+.backToQuestion,
+.questions li.question,
+.questions li.question .responses,
+.questions li.question .responses .correct,
+.questions li.question .responses .incorrect,
+.quizResults {
+	display: none;
+}
+
+/* If response messages are disabled or only shown on quiz completion,
+   nextQuestion button IS checkAnswer button - so it must be displayed */
+.nextQuestion.checkAnswer {
+	display: block;
+}
+
+ol.questions,
+ul.answers,
+ul.responses,
+ol.questions li,
+ul.answers li,
+ul.responses li {
+	list-style-type: none;
+}
+

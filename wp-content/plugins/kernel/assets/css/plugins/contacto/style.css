@@ -1,0 +1,132 @@
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px;
+}
+.ui-timepicker-div dl {
+  text-align: left;
+}
+.ui-timepicker-div dl dt {
+  font-size: 10px;
+  height: 25px;
+  margin-bottom: -25px;
+}
+.ui-timepicker-div dl dd {
+  font-size: 10px;
+  margin: 0 10px 10px 65px;
+}
+.ui-timepicker-div td {
+  font-size: 10px;
+}
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.ui-datepicker th {
+  font-weight: normal;
+  text-align: center;
+  font-size: 12px !important;
+}
+.ui-datepicker td {
+  font-size: 12px !important;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {
+  height: 25px !important;
+  font-size: 10px !important;
+  font-weight: normal;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+  height: 25px !important;
+  font-size: 10px !important;
+  font-weight: normal;
+}
+.form-horizontal .control-label {
+  margin: 0px 0px 0px auto;
+}
+.form-horizontal .show-grid {
+  margin-bottom: 10px;
+}
+.form-horizontal .form-group {
+  position: relative;
+  border: 0px solid transparent;
+  margin: 0px;
+  text-align: left;
+  padding-top: 0px;
+}
+.form-horizontal .form-group .form-control {
+  font-size: 20px;
+}
+.form-horizontal .form-group em.has-error {
+  position: absolute;
+  text-indent: 0px;
+  width: auto;
+  color: #BC5050;
+  height: auto;
+  line-height: normal;
+  right: 0px;
+  display: block;
+  bottom: -15px;
+  font-size: 20px;
+  font-style: normal;
+  display: none !important;
+}
+.form-horizontal .form-group em.has-error input {
+  color: #B94A48 !important;
+}
+.form-horizontal .form-group .control-label {
+  letter-spacing: 0px;
+  color: ;
+  text-align: right;
+}
+.form-horizontal .form-group .control-label .msg_menor {
+  display: none;
+  font-size: 11px;
+}
+.form-horizontal .form-group .control-label .msg_chiquito {
+  font-size: 10px;
+}
+.form-horizontal .form-group .control-label .txt_min {
+  font-size: 9px;
+}
+.form-horizontal .form-group .form-control {
+  padding: 2px 4px;
+}
+.form-horizontal .has-error .control-label {
+  color: #980A05;
+}
+.form-horizontal .has-success .control-label {
+  color: #006C02;
+}
+.form-horizontal input,
+.form-horizontal textarea {
+  background-color: #E6E7E8;
+}
+.form-horizontal textarea {
+  height: 208px;
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .ui-timepicker-div dl dt {
+    font-size: 9px;
+  }
+  .ui-timepicker-div dl dd {
+    font-size: 9px;
+  }
+  .ui-timepicker-div td {
+    font-size: 9px;
+  }
+  .ui-datepicker {
+    width: 210px !important;
+  }
+  .ui-datepicker th {
+    font-size: 10px !important;
+  }
+  .ui-datepicker td {
+    font-size: 9px !important;
+  }
+  .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {
+    font-size: 9px !important;
+  }
+  .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+    font-size: 9px !important;
+  }
+}

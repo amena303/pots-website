@@ -1,0 +1,195 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_glossary()
+	{
+
+		//-- 
+		.page-glossary
+		{
+			//-- Primary
+			#primary
+			{
+
+				//-- 
+				.content-area
+				{
+					.site-content
+					{
+						//-- 
+						.typeahead_papa
+						{
+							.block(auto, auto, normal, #ffffff, #000000, 0px 0px 0px 0px, 0px 0px);
+							text-align: right;
+							.typeahead_hijo
+							{
+								.inline-block(auto, 50px, 50px, #ffffff, #51439B, 0px 0px 0px auto, 0px 0px);
+								.fuente('opensans_condbold', 25px, normal, normal);
+								text-align: left;
+								.etiqueta
+								{
+									.inline-block(auto, 50px, 50px, #ffffff, #51439B, 0px 0px, 0px 0px);
+								}
+								.twitter-typeahead
+								{
+									.typeahead
+									{
+										text-align: left;
+										font-size: 20px;
+									}
+
+									.tt-dropdown-menu
+									{
+										padding: 8px 8px;
+										.tt-dataset-search
+										{
+											.tt-suggestions
+											{
+												.tt-suggestion + .tt-suggestion 
+												{
+													border-top: 1px solid #ccc;
+												}
+												.tt-suggestion
+												{
+													padding: 8px 8px;
+													.repo-first 
+													{
+														.repo-letter
+														{
+															.fuente('opensans_condbold', 24px, normal, normal);
+														}
+														.repo-name
+														{
+															.fuente('opensans_condlight', 24px, normal, normal);
+														}
+													}
+
+													.repo-second
+													{
+														.repo-description
+														{
+															.fuente('opensans_condlight', 20px, normal, normal);
+														}
+													}
+
+												}
+											}
+										}										
+									}
+
+								}
+							}
+						}
+
+						article
+						{
+							.entry-content
+							{
+								padding: 0px 25px 25px 25px;
+							}
+						}
+
+						//-- Filters
+						#filters 
+						{
+							.block(auto, 30px, 30px, transparent, #000000, 0px 0px, 0px 0px);
+							position: relative;
+							list-style-type: none;
+							text-align: center;
+
+							li 
+							{
+								.inline-block(35px, 45px, 45px, #ffffff, #51439B, 0px 2px, 0px 0px);
+								.fuente('opensans_condbold', 35px, normal, normal);
+								.borde-radial(3px, 3px, 3px, 3px);
+								cursor: pointer;
+								-webkit-transition: all 0.15s ease-out;
+								-moz-transition: all 0.15s ease-out;
+								-o-transition: all 0.15s ease-out;
+								transition: all 0.15s ease-out;
+								position: relative;
+							}
+
+							li:hover 
+							{
+								background: #51439B;
+								color: #ffffff;
+							}
+
+							li.active 
+							{
+								background: #51439B;
+								color: #ffffff;
+							}
+						}
+
+						.glosario
+						{
+							margin: 30px 0;
+							position: relative;
+							min-height: 650px;
+
+							/**
+							* Grid items animation
+							*/
+							#tiles
+							{
+								li 
+								{
+									.block(auto, auto, normal, #ffffff, #51439B, 0px 0px, 0px 0px);
+									list-style: none;
+									-webkit-transition: all 0.3s ease-out;
+									-moz-transition: all 0.3s ease-out;
+									-o-transition: all 0.3s ease-out;
+									transition: all 0.3s ease-out;
+									display: none;
+									//-- 
+									h3
+									{
+										.block(auto, 40px, 40px, #ffffff, #51439B, 0px 0px, 0px 0px);
+										.fuente('opensans_condbold', 25px, normal, normal);
+									}
+									//-- 
+									p
+									{
+										.block(auto, auto, 40px, #ffffff, #231F20, 0px 0px, 0px 0px);
+										.fuente('opensans_condlight', 25px, normal, normal);
+									}
+								}
+								li.inactive 
+								{
+									visibility: hidden;
+									opacity: 0;
+								}
+
+							}
+
+							.wookmark-placeholder 
+							{
+								-webkit-transition: all 0.3s ease-out;
+								-moz-transition: all 0.3s ease-out;
+								-o-transition: all 0.3s ease-out;
+								transition: all 0.3s ease-out;
+							}
+						}
+					}
+				}
+
+
+			}
+
+			//-- Secondary
+			#secondary
+			{
+				//display : none;
+				//width   : 1px;
+			}
+		}
+
+	}

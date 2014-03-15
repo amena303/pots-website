@@ -1,0 +1,117 @@
+.widget_blog { color:#000000 !important; }
+.widget_blog ul.blogs_dia {
+  width:auto;
+  height:365px;
+  line-height:normal;
+  background-color:transparent;
+  color:transparent;
+  margin:0px;
+  padding:0px 0px 0px 0px;
+  display:block;
+  overflow:hidden;
+  position:relative;
+}
+.widget_blog ul.blogs_dia li {
+  width:33.333333333333%;
+  height:auto;
+  line-height:normal;
+  background-color:transparent;
+  color:#000000;
+  margin:0px;
+  padding:0px;
+  text-align:top;
+  vertical-align:top;
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  position:relative;
+}
+.widget_blog ul.blogs_dia li .blog_dentro {
+  width:auto;
+  height:auto;
+  line-height:normal;
+  background-color:transparent;
+  color:transparent;
+  margin:0px 5px 0px 5px;
+  padding:0px;
+  display:block;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_imagen {
+  width:auto;
+  height:150px;
+  line-height:normal;
+  background-color:transparent;
+  color:transparent;
+  margin:0px 0px 5px 0px;
+  padding:0px;
+  display:block;
+  background-position:center top;
+  background-repeat:no-repeat;
+  text-align:center;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_imagen img {
+  width:auto;
+  height:auto;
+  line-height:normal;
+  background-color:#777777;
+  color:transparent;
+  margin:0px;
+  padding:0px;
+  display:block;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_autor {
+  width:auto;
+  height:15px;
+  line-height:15px;
+  background-color:transparent;
+  color:#102551;
+  margin:0px 0px 5px 0px;
+  padding:0px;
+  display:block;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_autor .texto { overflow:hidden; }
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_titulo {
+  width:auto;
+  height:30px;
+  line-height:15px;
+  background-color:transparent;
+  color:#111111;
+  margin:0px 0px 5px 0px;
+  padding:0px;
+  display:block;
+  overflow:hidden;
+  position:relative;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .enlace_titulo .texto { overflow:hidden; }
+.widget_blog ul.blogs_dia li .blog_dentro .contenido {
+  width:auto;
+  height:120px;
+  line-height:15px;
+  background-color:trasparent;
+  color:#656565;
+  margin:0px 0px 10px 0px;
+  padding:0px;
+  display:block;
+  overflow:hidden;
+  position:relative;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .contenido .texto { overflow:hidden; }
+.widget_blog ul.blogs_dia li .blog_dentro .leermas {
+  width:auto;
+  height:20px;
+  line-height:15px;
+  background-color:trasparent;
+  color:#102551;
+  margin:0px 0px 5px 0px;
+  padding:0px;
+  display:block;
+  overflow:hidden;
+  position:relative;
+  text-align:right;
+}
+.widget_blog ul.blogs_dia li .blog_dentro .leermas .texto { overflow:hidden; }
+.widget_blog ul.blogs_dia li:first-child .blog_dentro { margin:0px 10px 0px 0px !important; }
+.widget_blog ul.blogs_dia li:last-child .blog_dentro { margin:0px 0px 0px 10px !important; }

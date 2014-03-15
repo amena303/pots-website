@@ -1,0 +1,41 @@
+.widget_aquisedijo { color:#000000 !important; }
+.widget_aquisedijo .aquisedijo blockquote {
+  font-family:Georgia, serif;
+  font-size:16px;
+  line-height:20px;
+  margin:0 0;
+  padding:10px 0 10px 40px;
+  overflow:hidden;
+  position:relative;
+  text-align:left;
+  font-style:italic;
+  color:#001a4d;
+  height:100px !important;
+}
+.widget_aquisedijo .aquisedijo blockquote:before {
+  display:block;
+  content:"\201C";
+  font-size:80px;
+  position:absolute;
+  left:0px;
+  top:25px;
+  color:#111111;
+}
+.widget_aquisedijo .aquisedijo blockquote cite {
+  width:auto;
+  height:30px;
+  line-height:15px;
+  background-color:transparent;
+  color:#111111;
+  margin:0px 0px 0px 0px;
+  padding:5px 0px;
+  display:block;
+  font-family:"helvetica";
+  font-size:13px;
+  overflow:hidden;
+  position:relative;
+  text-align:left;
+}
+.widget_aquisedijo .aquisedijo blockquote cite:before { content:"\2014 \2009"; }
+.widget_aquisedijo .aquisedijo .titulo .texto { overflow:hidden; }
+.widget_aquisedijo .aquisedijo .audio .mejs-container { margin:0px auto; }

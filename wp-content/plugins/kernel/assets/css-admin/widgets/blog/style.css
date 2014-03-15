@@ -1,0 +1,12 @@
+.widget_admin_blog { color:#000000 !important; }
+.widget_admin_blog .control-group {
+  width:225px;
+  margin-bottom:5px;
+}
+.widget_admin_blog .control-group .control-label { width:80px; }
+.widget_admin_blog .control-group .controls {
+  margin-left:80px;
+  margin-bottom:0px;
+  width:145px;
+}
+.widget_admin_blog .control-group .controls input, .widget_admin_blog .control-group .controls select, .widget_admin_blog .control-group .controls textarea { width:135px !important; }

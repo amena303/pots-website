@@ -1,0 +1,8 @@
+.modal_wpadmin {
+  overflow-y: hidden;
+}
+.modal_wpadmin .modal-dialog {
+  width: 65%;
+  min-width: 400px;
+  padding-top: 55px;
+}

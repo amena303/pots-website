@@ -1,0 +1,44 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_employment()
+	{
+
+		//-- 
+		.page-employment
+		{
+			//-- Primary
+			#primary
+			{
+				width : 1024px;
+				//-- 
+				.content-area
+				{
+					.site-content
+					{
+						.page
+						{
+							.entry-content
+							{
+								padding: 0px 25px 25px 25px;
+							}
+						}
+					}
+				}
+			}
+
+			//-- Secondary
+			#secondary
+			{
+				display : none;
+				width   : 1px;
+			}
+		}
+
+	}

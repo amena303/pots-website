@@ -1,0 +1,200 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_service()
+	{
+
+		//-- 
+		.page-service
+		{
+
+			.top_controls
+			{
+				.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 10px 0px 0px 0px);
+				.button_back
+				{
+					.block(auto, auto, normal, transparent, #231F20, 0px auto 0px auto, 0px 0px 0px 0px);
+					.fuente('opensans_condbold', 20px, normal, normal);
+					cursor: pointer;
+					text-decoration: underline;
+				}
+			}
+
+			//--
+			.gallery
+			{
+				.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 10px 0px 10px 0px);
+				//-- 
+				.carousel
+				{
+					margin: 10px 0px 10px 0px;
+					height: 450px;
+					.carousel-inner
+					{
+						background-color : #51439B;
+						position: relative;
+						overflow: hidden;
+						width: 100%;
+						top: 0px;
+						.item
+						{
+							//height: 420px;
+							//-- 
+							.carousel-image
+							{
+								.block(1024px, 450px, normal, transparent, #000000, 0px auto 0px auto, 0px 0px 0px 0px);
+								position: relative;
+								iframe
+								{
+
+								}
+								.img-responsive
+								{
+
+								}
+							}
+							.carousel-title
+							{
+								display: none;
+							}
+							//-- 
+							.carousel-caption
+							{
+								.block(100%, 180px, 20px, rgba(81, 67, 155, 0.5), #FFFFFF, 0px 0px 0px 0px, 20px 20px 60px 20px);
+								position   : absolute;
+								bottom     : 0px;
+								left       : 0px;
+								overflow   : hidden;
+								text-align : justify;
+								z-index: 2;
+								span
+								{
+									.block(100%, 100px, 20px, transparent, #FFFFFF, 0px 0px 0px 0px, 0px 0px 0px 0px);
+									.fuente('opensans_condlight', 20px, normal, normal);
+									overflow: hidden;
+								}
+							}
+						}
+					}
+
+
+					//-- 
+					.carousel-indicators
+					{
+						bottom : 15px;
+						left   : 70%;
+						margin : 0px;
+						width  : 30%;
+
+						li
+						{
+							margin           : 0px 5px;
+							width            : 20px;
+							height           : 20px;
+							border           : 0px solid #51439B;
+							background-color : #51439B;
+						}
+						li.active
+						{
+							width            : 20px;
+							height           : 20px;
+							border           : 0px solid #51439B;
+							background-color : #FFFFFF;
+						}
+					}
+
+					.carousel-control
+					{
+						opacity: .7;
+						height: 450px;
+						top: 0px;
+						z-index: 3;
+					}
+					.carousel-control:hover
+					{
+						opacity: 1;
+					}
+					.carousel-control.left
+					{
+						//left: -80px;
+						//background-image: none;
+						span
+						{
+							.inline-block(32px, 32px, normal, transparent, #51439B, 0px auto 0px auto, 0px 0px);
+							font-size: 32px;
+							text-align: center;
+							left: 0px;
+							right: auto;
+						}
+					}
+					.carousel-control.right
+					{
+						//right: -80px;
+						//background-image: none;
+						span
+						{
+							.inline-block(32px, 32px, normal, transparent, #51439B, 0px auto 0px auto, 0px 0px);
+							font-size: 32px;
+							text-align: center;
+							left: auto;
+							right: 0px;
+						}
+					}
+				}
+			}
+
+
+			//-- Primary
+			#primary
+			{
+				article
+				{
+					.entry-content
+					{
+						margin: 20px auto 10px auto;
+					}
+					.post-navigation
+					{
+						margin: 20px auto 20px auto;
+					}
+				}
+
+				.nota
+				{
+					.block(90%, auto, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+					.cabecera
+					{
+						.block(auto, 50px, 25px, transparent, #231F20, 0px auto 0px auto, 0px 0px);
+						.fuente('opensans_condlight', 22px, normal, normal);
+						text-align: left;
+					}
+					.botones
+					{
+						.block(auto, auto, normal, transparent, #000000, 10px auto 0px auto, 0px 0px);
+						text-align: right;
+						//-- 
+						.btn-download
+						{
+							.inline-block(auto, 40px, 40px, transparent, #231F20, 0px auto 0px auto, 0px 10px);
+							.fuente('opensans_condlight', 20px, normal, normal);
+						}
+						//-- 
+						.btn-morado();
+					}
+				}
+			}
+
+			//-- Secondary
+			#secondary
+			{
+			}
+
+		}
+
+	}

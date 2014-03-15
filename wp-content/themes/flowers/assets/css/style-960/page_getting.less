@@ -1,0 +1,55 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- PAG
+	//--------
+	.page_getting()
+	{
+
+		//-- 
+		.page-getting
+		{
+			//-- Primary
+			#primary
+			{
+				//-- 
+				.content-area
+				{
+					.site-content
+					{
+						.page
+						{
+							.entry-content
+							{
+								padding: 0px 25px 25px 25px;
+							}
+						}
+
+						.botones
+						{
+							.block(auto, auto, normal, transparent, #000000, 10px auto 0px auto, 0px 0px);
+							text-align: right;
+							//-- 
+							.btn-download
+							{
+								.inline-block(auto, 40px, 40px, transparent, #231F20, 0px auto 0px auto, 0px 10px);
+								.fuente('opensans_condlight', 20px, normal, normal);
+							}
+							//-- 
+							.btn-morado();
+						}
+					}
+				}
+			}
+
+			//-- Secondary
+			#secondary
+			{
+			}
+		}
+
+	}

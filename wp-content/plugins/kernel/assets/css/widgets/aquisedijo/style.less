@@ -1,0 +1,77 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_aquisedijo
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			//display: none !important;
+			//width: 55% !important;
+			//margin: 0px 0px 0px auto !important;
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+		}
+		.aquisedijo
+		{
+			blockquote
+			{
+				font-family: Georgia,serif;
+				font-size: 16px;
+				line-height: 20px;
+				margin: 0 0;
+				padding: 10px 0 10px 40px;
+				overflow: hidden;
+				position: relative;
+				text-align: left;
+				font-style: italic;
+				color: darken(#003399, 15%);
+				height: 100px !important;
+			}
+
+			blockquote:before {
+				display: block;
+				content: "\201C";
+				font-size: 80px;
+				position: absolute;
+				left: 0px;
+				top: 25px;
+				color: @color_titulo;
+			}
+
+			blockquote cite
+			{
+				.block(auto, 30px, 15px, transparent, @color_titulo, 0px 0px 0px 0px, 5px 0px);
+				font-family: @font-helvetica;
+				font-size: 13px;
+				overflow: hidden;
+				position: relative;
+				text-align: left;
+			}
+
+			blockquote cite:before {
+				content: "\2014 \2009";
+			}
+
+
+			.titulo
+			{
+				.texto
+				{
+					//.block(auto, 30px, 15px, trasparent, @color_enlace_normal, 0px, 0px);
+					overflow: hidden;
+				}
+			}
+			.contenido
+			{
+				//.block(auto, 60px, 15px, trasparent, @color_texto, 0 0 0 20px, 0px);
+			}
+			.audio
+			{
+				.mejs-container
+				{
+					margin: 0px auto;
+				}
+			}
+
+		}
+	}

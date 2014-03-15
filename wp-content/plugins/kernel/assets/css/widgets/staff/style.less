@@ -1,0 +1,90 @@
+	@import "../../variables.less";
+	@import "../../mixins.less";
+
+	.widget_staff
+	{
+		color: #000000 !important;
+		h3.widget-title
+		{
+			//.block(auto, auto, normal, transparent, #777777, 0px !important, 0px !important);
+			//margin: 0px 0px 5px 0px !important;
+		}
+		ul.staff
+		{
+			.block(auto, 150px, normal, transparent, transparent, 0px !important, 0px 10px !important);
+			//overflow: hidden;
+			position: relative;
+			text-align: left;
+			li.staff_item
+			{
+				.inline-block(auto, auto, normal, transparent, transparent, 0px, 0px 0px 0 0px);
+				position: relative;
+
+				a
+				{
+					//lighten(@color_texto, 50%)
+					.block(auto, auto, normal, transparent, transparent, 0px, 5px 5px 5px 5px);
+					img
+					{
+						.block(40px, 40px, normal);
+						opacity: 0.75;
+					}
+					&:hover
+					{
+						img
+						{
+							//.block(40px, 40px, normal);
+							opacity: 1;
+						}
+						//background-color: lighten(@color_texto, 40%);
+					}
+				}
+
+
+				.data
+				{
+					.block(160px, 75px, normal, transparent, @color-black, 0px auto, 0px 0px 0px 0px);
+					display: none;
+					overflow: hidden;
+					position: absolute;
+					left: (-80px)+28;
+					top: -60px;
+
+
+					.contenedor
+					{
+						.block(140px, 30px, normal, #003399, @color-black, 0px auto, 5px 10px);
+						.borde-radius(5px, 5px, 5px, 5px);
+						overflow: hidden;
+
+						.colaborador
+						{
+							.block(100%, 30px, 15px, transparent, @color-white, 0px auto, 0px);
+							.fuente(@font-menu, 13px, bold, normal);
+							text-align: center;
+							overflow: hidden;
+						}
+						.articulo
+						{
+							.block(100%, 25px, 11px, transparent, #ffff00, 0px auto, 0px);
+							.fuente(@font-menu, 11px, normal, normal);
+							text-align: left;
+							overflow: hidden;
+							display: none;
+						}
+					}
+					.pie
+					{
+						.block(150px, 25px, normal, transparent, @color-black, 0px, 0px 5px);
+						//background-image: url('../img/triangulito.png');
+						background-image: url("../../../img/widgets/staff/triangulo.png");
+						background-color: transparent;
+						background-repeat: no-repeat;
+						background-position: center top;
+					}
+				}
+
+
+			}
+		}
+	}

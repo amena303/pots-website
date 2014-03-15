@@ -1,0 +1,343 @@
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@RUTA_img_960: "../img/img-960/";
+
+	//--------
+	//-- MENU
+	//--------
+	.gen_cab()
+	{
+		//--
+		a:active, 
+		a:hover, 
+		a:focus
+		{
+			outline: 0 none;
+    		outline-offset: 0px;
+    		text-decoration: none;
+		}
+
+		//-- 
+		.menu-item:before
+		{
+			.inline-block(5px, 30px, 30px, #C5C5C5, #000000, 0px 0px, 0px 0px);
+		}
+
+		//-- 
+		.site
+		{
+
+			//-- 
+			.site-header 
+			{
+				.block(1024px, auto, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+				.clearfix();
+				//--
+				.header-logo
+				{
+					.block(128px, 128px, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+					position: relative;
+					text-align: center;
+					float: left;
+				}
+				//--
+				.header-main
+				{
+					.block(896px, 128px, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+					position: relative;
+					float: left;
+					//-- 
+					.sup
+					{
+						//-- 
+						.block(auto, 90px, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+						position: relative;
+						text-align: right;
+						//-- 
+						.etiqueta
+						{
+							.inline-block(auto, 90px, 90px, transparent, #3B3A3C, 0px auto 0px auto, 0px 10px);
+							.fuente('opensans_condlight', 22px, normal, normal);
+							text-align: center;
+						}
+						//-- 
+						.social-navigation
+						{
+							.inline-block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+							//-- 
+							ul.nav-menu
+							{
+								.inline-block(160px, 90px, 90px, transparent, #000000, 0px auto 0px auto, 0px 0px);
+								position: relative;
+								text-align: center;
+								//-- 
+								li.btn
+								{
+									.inline-block(auto, auto, normal, transparent, #000000, 0px 0px, 0px 2px);
+									vertical-align: middle;
+
+									a
+									{
+										.block(32px, 32px, normal, transparent, #000000, 0px 0px, 0px 0px);
+										.fuente('helvetica_neue', 0px, normal, normal);
+
+										text-align: center;
+										background-image: url("@{RUTA_img_960}/miscelaneo/social.png");
+										background-repeat: no-repeat;
+										background-size: auto auto;
+									}
+								}
+								li.btn-facebook
+								{
+									a
+									{
+										background-position: -(32*0) + 0px 0px;
+									}
+								}
+								li.btn-twitter
+								{
+									a
+									{
+										background-position: -(32*1) + 0px 0px;
+									}
+								}
+								li.btn-youtube
+								{
+									a
+									{
+										background-position: -(32*2) + 0px 0px;
+									}
+								}
+								li.btn-pinterest
+								{
+									a
+									{
+										background-position: -(32*3) + 0px 0px;
+									}
+								}
+							}
+						}
+					}
+					//-- 
+					.inf
+					{
+						//-- 
+						.block(auto, 40px, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+						position: relative;
+						//-- Navigation
+						.site-navigation
+						{
+							//float: right;
+							font-size: 11px;
+							margin: 0px 0px 0px 0px;
+							padding: 5px 0px 5px 0px;
+							//text-transform: uppercase;
+
+							//-- 
+							ul.nav-menu
+							{
+								.block(auto, auto, normal, transparent, #000000, 0px auto 0px auto, 0px 0px);
+								text-align: right;
+								//-- 
+								li.menu-item
+								{
+									padding: 0px 5px;
+									border-right: 1px solid #C5C5C5;
+									a
+									{
+										.inline-block(auto, auto, 30px, transparent, #000000, 0px 0px, 0px 10px);
+										.fuente('opensans_condlight', 18px, normal, normal);
+										white-space: nowrap;
+										// white-space: normal;
+									}
+								}
+								//-- 
+								li:hover,
+								li.focus 
+								{
+									a
+									{
+										background-color: #F5F5F5;
+										border-bottom: 0px solid #C5C5C5;
+										color: #000000;
+									}
+								}
+								li:last-child
+								{
+									border-right: 0px solid transparent;
+								}
+							}
+
+							ul 
+							{
+								list-style: none;
+								margin: 0;
+								//-- 
+								li 
+								{
+								}
+								//-- 
+								li:hover > ul,
+								li.focus > ul {
+									left: auto;
+								}
+								//-- 
+								ul
+								{
+									background-color: #F5F5F5;
+									float: left;
+									margin: 0;
+									position: absolute;
+									top: 30px;
+									left: -999em;
+									z-index: 99999;
+									ul
+									{
+										margin-left: 0px;
+										left: -999em;
+										top: 0;
+									}
+									a
+									{
+										padding: 0px 10px;
+										white-space: normal;
+										width: 176px;
+									}
+									//-- 
+									a:hover,
+									li.focus > a 
+									{
+										background-color: #000000;
+									}
+									//-- 
+									li:hover > ul,
+									li.focus > ul {
+										left: 100%;
+									}
+
+								}
+
+								a 
+								{
+									color: #000000;
+									display: block;
+								}
+								a:hover 
+								{
+									color: #000000;
+								}
+
+								.current_page_item > a,
+								.current_page_ancestor > a,
+								.current-menu-item > a,
+								.current-menu-ancestor > a 
+								{
+									color: #000000;
+									font-weight: normal;
+									//text-decoration: underline;
+									border-bottom: 1px solid #C5C5C5;
+								}
+							}
+
+							li 
+							{
+								border: 0;
+								display: inline-block;
+								height: 30px;
+								line-height: 30px;
+								position: relative;
+
+								//--
+								li 
+								{
+									border: 0;
+									display: block;
+									height: auto;
+									line-height: 1.0909090909;
+								}
+								//-- 
+								.current_page_item > a,
+								.current_page_ancestor > a,
+								.current-menu-item > a,
+								.current-menu-ancestor > a 
+								{
+									color: #000000;
+								}
+								//-- 
+								.menu-item-has-children > a,
+								.page_item_has_children > a {
+									padding-right: 20px;
+									width: 160px;
+								}
+							}
+
+							.menu-item-has-children > a,
+							.page_item_has_children > a {
+								padding-right: 26px;
+							}
+
+							.menu-item-has-children > a:after,
+							.page_item_has_children > a:after {
+								-webkit-font-smoothing: antialiased;
+								content: "\f502";
+								display: inline-block;
+								font: normal 8px/1 Genericons;
+								position: absolute;
+								right: 12px;
+								top: 22px;
+								vertical-align: text-bottom;
+							}
+
+							.menu-item-has-children li.menu-item-has-children > a:after,
+							.menu-item-has-children li.page_item_has_children > a:after,
+							.page_item_has_children li.menu-item-has-children > a:after,
+							.page_item_has_children li.page_item_has_children > a:after {
+								content: "\f501";
+								right: 8px;
+								top: 20px;
+							}
+						}
+					}
+
+
+				}
+			}
+
+			//-- 
+			.site-titular
+			{
+				.block(1024px, 200px, 200px, transparent, #FFFFFF, 10px auto 10px auto, 0px 0px 0px 0px);
+				position: relative;
+				// background-image: url("@{RUTA_img_960}/miscelaneo/social.png");
+				background-repeat: no-repeat;
+				background-size: auto auto;
+				//-- 
+				.titulo
+				{
+					.block(1024px, 50px, 50px, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+					//.fuente('helvetica_neue', 20px, normal, normal);
+					.fuente('opensans_condbold', 45px, normal, normal);
+					text-transform: uppercase;
+					text-align: left;
+					position: absolute;
+					top: 50px;
+					left: 80px;
+				}
+				//-- 
+				.texto
+				{
+					.block(312px, 60px, 20px, transparent, #FFFFFF, 0px auto 0px auto, 0px 0px 0px 0px);
+					//.fuente('helvetica_neue', 20px, normal, normal);
+					.fuente('opensans_condlight', 20px, normal, normal);
+					text-align: left;
+					position: absolute;
+					top: 100px;
+					left: 80px;
+				}
+			}
+		}
+
+ 	}
+

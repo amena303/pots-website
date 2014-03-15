@@ -1,0 +1,12 @@
+.widget_division {
+  width:auto;
+  height:auto;
+  line-height:normal;
+  background-color:transparent;
+  color:transparent;
+  margin:0px;
+  padding:15px 0px 15px 0px;
+  display:block;
+}
+.widget_division h3.widget-title { display:none !important; }
+.widget_division div.division { display:none !important; }

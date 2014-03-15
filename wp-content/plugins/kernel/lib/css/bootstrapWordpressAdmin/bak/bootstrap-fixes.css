@@ -1,0 +1,37 @@
+
+.bootstrap-wpadmin input[type="text"],
+.bootstrap-wpadmin input[type="submit"],
+.bootstrap-wpadmin input[type="password"],
+.bootstrap-wpadmin textarea {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.bootstrap-wpadmin div.error
+{
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	border-color: transparent;
+    border-style: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000;
+}
+.modal-backdrop.fade {
+  opacity: 0;
+}
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+

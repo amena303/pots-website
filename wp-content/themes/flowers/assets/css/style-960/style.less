@@ -1,0 +1,99 @@
+	//--
+	//-- 960px
+	//--
+                     
+	//-- Variables generales
+	@import "../mixins.less";
+	@import "../variables.less";
+
+	@import "gen_gen.less";
+	@import "gen_pag.less";
+	@import "gen_cab.less";
+
+	@import "page_home.less";
+	@import "page_about.less";
+	@import "page_services.less";
+	@import "page_service.less";
+	@import "page_employment.less";
+	@import "page_getting.less";
+	@import "page_faq.less";
+	@import "page_workshops.less";
+	@import "page_blog.less";
+	@import "page_resources.less";
+	@import "page_glossary.less";
+	@import "single_gen.less";
+
+	html, body 
+	{
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		//overflow-x: hidden;
+	}
+
+	html
+	{ 
+
+		//overflow: hidden;
+	}
+	body
+	{
+		//overflow-x: hidden;
+		background-color: #FFFFFF;
+		//background-image: radial-gradient(70% 70%, #F1EDE1 10%, #C8C8B8 70%);
+	}
+      
+  
+	//-- 
+	//-- MQ
+	//--
+    //@media screen and (min-width: 0px)
+	//{
+		//-- NAV
+		.gen_cab();
+
+		//-- PAG
+		.gen_pag();
+
+		//-- PAG
+		.gen_gen();
+
+		//-- PAGINA
+		.page_home();
+
+		//-- PAGINA
+		.page_about();
+
+		//-- PAGINA
+		.page_services();
+
+		//-- PAGINA
+		.page_service();
+
+		//-- PAGINA
+		.page_employment();
+
+		//-- PAGINA
+		.page_getting();
+
+		//-- PAGINA
+		.page_faq();
+
+		//-- PAGINA
+		.page_workshops();
+
+		//-- PAGINA
+		.page_blog();
+
+		//-- PAGINA
+		.page_resources();
+
+		//-- PAGINA
+		.page_glossary();
+
+		//-- SINGLE
+		.single_gen();
+	//}
+
+
