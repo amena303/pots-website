@@ -45,7 +45,127 @@ class Contacto {
 		add_action('wp_ajax_nopriv_reg'.self::$SLUG, array($this, 'registroController'));
 		//-- Shortcode
 		add_shortcode(self::$SLUG, array($this, 'registroVista'));
-    }
+
+		add_filter('query_vars'.self::$SLUG, array($this, 'parameter_queryvars'));
+	}
+
+	function parameter_queryvars( $qvars )
+	{
+		$qvars[] = 'pagina';
+		return $qvars;
+	}
+
+	//paginacion($, $, $, $, $);
+	function paginacion($pag_act, $pag_tot, $pag_ran, $pag_base = '') {
+		ob_start();
+
+		$showitems = ($pag_ran * 2) + 1;
+		if (empty($pag_act)):
+			$pag_act = 1;
+		endif;
+		if (1 != $pag_tot):
+		?>
+
+			<ul class='pagination'>
+
+				<?php
+					if ($pag_act > 2 && $pag_act > $pag_ran + 1 && $showitems < $pag_tot):
+					//-- 
+					$pag_base = add_query_arg(array(
+						'pagina' => 1
+						, 'page' => self::$SLUG
+					), admin_url('admin.php'));
+				?>
+					<li>
+						<a data-pag="<?php echo ($pag_base - 1); ?>" href="<?php echo $pag_base; ?>">Inicio</a>
+					</li>
+				<?php
+					endif;
+				?>
+
+				<?php
+					if ($pag_act > 1 && $showitems < $pag_tot):
+					//-- 
+					$pag_base = add_query_arg(array(
+						'pagina' => ($pag_act - 1)
+						, 'page' => self::$SLUG
+					), admin_url('admin.php'));
+				?>
+					<li>
+						<a data-pag="<?php echo ($pag_act - 1); ?>" href="<?php echo $pag_base; ?>">Anterior</a>
+					</li>
+				<?php
+					endif;
+				?>
+
+				<?php
+					for ($i = 1; $i <= $pag_tot; $i++) :
+						if (1 != $pag_tot && (!($i >= $pag_act + $pag_ran + 1 || $i <= $pag_act - $pag_ran - 1) || $pag_tot <= $showitems )):
+							if( $pag_act == $i):
+								//-- 
+								$pag_base = add_query_arg(array(
+									'pagina' => $i
+									, 'page' => self::$SLUG
+								), admin_url('admin.php'));
+				?>
+								<li class='active'>
+									<a data-pag="<?php echo $i; ?>" href='<?php echo  $pag_base; ?>'><?php echo $i; ?><div class='current sr-only'>&nbsp;</div></a>
+								</li>
+				<?php
+							else:
+								//-- 
+								$pag_base = add_query_arg(array(
+									'pagina' => $i
+									, 'page' => self::$SLUG
+								), admin_url('admin.php'));
+				?>
+								<li>
+									<a data-pag="<?php echo $i; ?>" href="<?php echo  $pag_base; ?>" class="inactive"><?php echo $i; ?></a></li>
+								</li>
+				<?php 
+							endif;
+						endif;
+					endfor;
+				?>
+
+				<?php
+					if ($pag_act < $pag_tot && $showitems < $pag_tot):
+						//-- 
+						$pag_base = add_query_arg(array(
+							'pagina' => $pag_act + 1
+							, 'page' => self::$SLUG
+						), admin_url('admin.php'));
+				?>
+					<a data-pag="<?php echo ($pag_act + 1); ?>" href="<?php echo $pag_base; ?>">Siguiente</a>
+				<?php
+					endif;
+				?>
+
+				<?php
+					if ($pag_act < $pag_tot - 1 && $pag_act + $pag_ran - 1 < $pag_tot && $showitems < $pag_tot):
+						//-- 
+						$pag_base = add_query_arg(array(
+							'pagina' => $pag_tot
+							, 'page' => self::$SLUG
+						), admin_url('admin.php'));
+				?>
+					<a data-pag="<?php echo ($pag_tot); ?>" href="<?php echo $pag_base; ?>">Siguiente</a>
+				<?php
+					endif;
+				?>
+			</ul>
+
+		<?php
+			/*
+			$hml .= 'pgdNum-> '.$pag_act.'<br>';
+			$hml .= 'pgdTot-> '.$pag_tot.'<br>';
+			$hml .= 'pgdRng-> '.$pag_ran.'<br>';
+			*/
+		endif;
+		$dom_data = ob_get_clean();
+
+		return $dom_data;
+	}
 
 	//-- Strip
 	function stripTags($keys, &$arr) {
@@ -249,7 +369,6 @@ class Contacto {
 	//-- Setup Admin Init
 	public function setupAdmInit() {
 	}
-
 	//-- Styles ADMIN
 	public function styles_ADMIN() {
 		if(is_admin()):
@@ -261,8 +380,22 @@ class Contacto {
 				if(!class_exists('lessc')):
 					throw new Exception('<br><br>¡La clase lessc no ha sido encontrada!<br><br><br>');
 				endif;
-				//$less = new lessc(self::$PLUGIN_PATH.'assets/css-admin/plugins/'.self::$SLUG.'/style.less');
-				//file_put_contents(self::$PLUGIN_PATH.'assets/css-admin/plugins/'.self::$SLUG.'/style.css', $less->parse());
+
+				$less = new lessc(self::$PLUGIN_PATH . 'assets/css-admin/plugins/'.self::$SLUG.'/style.less');
+				file_put_contents(self::$PLUGIN_PATH . 'assets/css-admin/plugins/'.self::$SLUG.'/style.css', $less->parse());
+
+				//--
+				// $less = new lessc(self::$PLUGIN_PATH . '/lib/css/bootstrap/less/bootstrap.less');
+				// file_put_contents(self::$PLUGIN_PATH . '/lib/css/bootstrap/bootstrap.css', $less->parse());
+
+				// //--
+				// $less = new lessc(self::$PLUGIN_PATH. 'lib/css/bootstrap.datepicker/less/bootstrap.datepicker.less');
+				// file_put_contents(self::$PLUGIN_PATH. 'lib/css/bootstrap.datepicker/bootstrap.datepicker.css', $less->parse());
+
+				// //--
+				// $less = new lessc(self::$PLUGIN_PATH . '/lib/css/bootstrapWordpressAdmin/less/bootstrap.less');
+				// file_put_contents(self::$PLUGIN_PATH . '/lib/css/bootstrapWordpressAdmin/bootstrap.css', $less->parse());
+
 			}
 			catch( Exception $e ) {
 				echo $e->getMessage();
@@ -272,11 +405,19 @@ class Contacto {
 			//Register
 			//-----
 			//Styles
+
+			if(!wp_style_is('jquery.bootstrap-css', 'registered')):
+				wp_register_style('jquery.bootstrap-css', self::$PLUGIN_URL . '/lib/css/bootstrap/bootstrap.css');
+			endif;
+			if(!wp_style_is('jquery.bootstrap.datepicker-css', 'registered')):
+				wp_register_style('jquery.bootstrap.datepicker-css', self::$PLUGIN_URL . '/lib/css/bootstrap.datepicker/bootstrap.datepicker.css');
+			endif;
+			if(!wp_style_is('jquery.bootstrapWordpressAdmin-css', 'registered')):
+				wp_register_style('jquery.bootstrapWordpressAdmin-css', self::$PLUGIN_URL . '/lib/css/bootstrapWordpressAdmin/bootstrap.css');
+			endif;
+
 			if( !wp_style_is(self::$SLUG.'-admin.style', 'registered') )
 				wp_register_style(self::$SLUG.'-admin.style', self::$PLUGIN_URL.'assets/css-admin/plugins/'.self::$SLUG.'/style.css');
-
-			// if( !wp_style_is('bootstrapcssWP', 'registered') )
-			// 	wp_register_style('bootstrapcssWP', self::$PLUGIN_URL.'assets/css-admin/bootstrap/bootstrap.css');
 
 			// if( !wp_style_is('bootstrapcssWP-fixes', 'registered') )
 			// 	wp_register_style('bootstrapcssWP-fixes', self::$PLUGIN_URL.'assets/css-admin/bootstrap/bootstrap-fixes.css');
@@ -285,6 +426,19 @@ class Contacto {
 			//Encolar
 			//-----
 			//Styles
+
+			if( !wp_style_is('jquery.bootstrap-css', 'queue')):
+				wp_enqueue_style('jquery.bootstrap-css');
+			endif;
+
+			if( !wp_style_is('jquery.bootstrap.datepicker-css', 'queue')):
+				wp_enqueue_style('jquery.bootstrap.datepicker-css');
+			endif;
+
+			if( !wp_style_is('jquery.bootstrapWordpressAdmin-css', 'queue')):
+				wp_enqueue_style('jquery.bootstrapWordpressAdmin-css');
+			endif;
+
 			if(!wp_style_is(self::$SLUG.'-admin.style', 'queue'))
 				wp_enqueue_style(self::$SLUG.'-admin.style');
 
@@ -299,9 +453,60 @@ class Contacto {
 	//-- Scripts ADMIN
 	public function scripts_ADMIN() {
 		if(is_admin()):
+
 			//-----
 			//Register
 			//-----
+
+			if(!wp_script_is('jquery.bootstrap-transition-js', 'registered')):
+				wp_register_script('jquery.bootstrap-transition-js', self::$PLUGIN_URL . 'lib/js/bootstrap/transition.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-alert-js', 'registered')):
+				wp_register_script('jquery.bootstrap-alert-js', self::$PLUGIN_URL . 'lib/js/bootstrap/alert.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-modal-js', 'registered')):
+				wp_register_script('jquery.bootstrap-modal-js', self::$PLUGIN_URL . 'lib/js/bootstrap/modal.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-dropdown-js', 'registered')):
+				wp_register_script('jquery.bootstrap-dropdown-js', self::$PLUGIN_URL . 'lib/js/bootstrap/dropdown.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-scrollspy-js', 'registered')):
+				wp_register_script('jquery.bootstrap-scrollspy-js', self::$PLUGIN_URL . 'lib/js/bootstrap/scrollspy.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-tab-js', 'registered')):
+				wp_register_script('jquery.bootstrap-tab-js', self::$PLUGIN_URL . 'lib/js/bootstrap/tab.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-tooltip-js', 'registered')):
+				wp_register_script('jquery.bootstrap-tooltip-js', self::$PLUGIN_URL . 'lib/js/bootstrap/tooltip.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-popover-js', 'registered')):
+				wp_register_script('jquery.bootstrap-popover-js', self::$PLUGIN_URL . 'lib/js/bootstrap/popover.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-button-js', 'registered')):
+				wp_register_script('jquery.bootstrap-button-js', self::$PLUGIN_URL . 'lib/js/bootstrap/button.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-collapse-js', 'registered')):
+				wp_register_script('jquery.bootstrap-collapse-js', self::$PLUGIN_URL . 'lib/js/bootstrap/collapse.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-carousel-js', 'registered')):
+				wp_register_script('jquery.bootstrap-carousel-js', self::$PLUGIN_URL . 'lib/js/bootstrap/carousel.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap-affix-js', 'registered')):
+				wp_register_script('jquery.bootstrap-affix-js', self::$PLUGIN_URL . 'lib/js/bootstrap/affix.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.bootstrap.datepicker-js', 'registered')):
+				wp_register_script('jquery.bootstrap.datepicker-js', self::$PLUGIN_URL . 'lib/js/bootstrap.datepicker/bootstrap.datepicker.js', array(), '', false);
+			endif;
+			if(!wp_script_is('jquery.keyfilter-js', 'registered')):
+				wp_register_script('jquery.keyfilter-js', self::$PLUGIN_URL.'lib/js/jquery.keyfilter.js', array( 'jquery' ), '1', false);
+			endif;
+			if(!wp_script_is('jquery.charlimit-js', 'registered')):
+				wp_register_script('jquery.charlimit-js', self::$PLUGIN_URL.'lib/js/jquery.charlimit.js', array( 'jquery' ), '1', true);
+			endif;
+			if(!wp_script_is('jquery.validate-js', 'registered')):
+				wp_register_script('jquery.validate-js', self::$PLUGIN_URL.'lib/js/jquery.validate.js', array( 'jquery' ), '1', false);
+			endif;
+
 //			if(!wp_script_is('tiny_mce', 'registered'))
 //				wp_register_script('tiny_mce', self::$PLUGIN_URL.'/assets/js-admin/form/script.js');
 
@@ -315,67 +520,207 @@ class Contacto {
 			//Encolar
 			//-----
 			//Scripts
-			if(!wp_script_is('tiny_mce', 'queue'))
-				wp_enqueue_script('tiny_mce');
+
+			if(!wp_script_is('jquery.bootstrap-transition-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-transition-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-alert-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-alert-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-modal-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-modal-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-dropdown-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-dropdown-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-scrollspy-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-scrollspy-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-tab-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-tab-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-tooltip-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-tooltip-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-popover-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-popover-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-button-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-button-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-collapse-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-collapse-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-carousel-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-carousel-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap-affix-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap-affix-js');
+			endif;
+			if(!wp_script_is('jquery.bootstrap.datepicker-js', 'queue')):
+				wp_enqueue_script('jquery.bootstrap.datepicker-js');
+			endif;
+			if(!wp_script_is('jquery.keyfilter-js', 'queue')):
+				wp_enqueue_script('jquery.keyfilter-js');
+			endif;
+			if(!wp_script_is('jquery.charlimit-js', 'queue')):
+				wp_enqueue_script('jquery.charlimit-js');
+			endif;
+			if(!wp_script_is('jquery.validate-js', 'queue')):
+				wp_enqueue_script('jquery.validate-js');
+			endif;
+
+			// if(!wp_script_is('tiny_mce', 'queue'))
+			// 	wp_enqueue_script('tiny_mce');
 
 			if(!wp_script_is(self::$SLUG.'-admin.script', 'queue'))
 				wp_enqueue_script(self::$SLUG.'-admin.script');
 
 			// if(!wp_script_is('bootstrapjs', 'queue'))
 			// 	wp_enqueue_script('bootstrapjs');
+
 		endif;
 	}
 
 	//-- Administracion registros
 	public function registroVistaADMIN() {
-		$contacto = new ContactoDAO();
-		$registros = $contacto->getAll();
 	?>
+		<?php 
+			//-- Parameters
+			// $pag_act  = 	(isset($wp_query->query_vars['pagina'])) ? $wp_query->query_vars['pagina'] : '1';
+			$pag_act  = 	is_null($_GET['pagina']) ? 1 : $_GET['pagina'];
+			$pag_act  = 	(int) $pag_act;
+			$pag_ppp  =	10;
+
+			// var_dump((int) $pag_act);
+		?>
+		<?php 
+			$contacto         = new ContactoDAO();
+			$registros        = $contacto->getAll($pag_act, $pag_ppp);
+			$registros_pagTot = $contacto->getTotalPages($pag_ppp);
+			// var_dump($registros_pagTot);
+		?>
+
+		<?php 
+			//-- Pagination
+			$pag_ran  =	4;
+			$pag_tot  = $registros_pagTot;
+			// $pag_base =	get_admin_url() . 'admin.php?page=' . self::$SLUG ;
+			$pag_base = add_query_arg(array(
+				// 'pagina' => $pag_act
+				'page' => self::$SLUG
+			), admin_url('admin.php'));
+			// var_dump($pag_base);
+		?>
+
 		<div class="wrap form-admin">
 			<div class="icon32 icon32-posts-autos" id="icon-edit"><br></div>
-			<h2 class="cabecera">Servicio al cliente</h2>
-			<ul class="subsubsub">
-				<!--
-				<li class="all">
-					<a class="current" href="edit.php?post_type=autos">Todos <span class="count">(2)</span></a> |</li>
-				<li class="publish">
-					<a href="edit.php?post_status=publish&amp;post_type=autos">Pendientes <span class="count">(2)</span></a>
-				</li>
-				-->
-			</ul>
+			<h2 class="cabecera"><?php echo self::$PAGADMIN_TITULO; ?>&nbsp;<!--<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Launch</button>--></h2>
+
+			<!-- Button trigger modal -->
+
+			<!-- Modal -->
+			<div class="modal modal_wpadmin fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="filters">
+				<!-- Nav tabs -->
+				<ul class="nav nav-pills">
+					<li class="active">
+						<a href="#nofilter" data-toggle="tab">No filter</a>
+					</li>
+					<li>
+						<!-- 
+						<a href="#date" data-toggle="tab">By Date</a>
+						-->
+					</li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane nofilter active" id="nofilter">
+						<h4 class="titulo">-No filter-</h4>
+					</div>
+					<div class="tab-pane date" id="date">
+						<h4 class="titulo">-By Date-</h4>
+						<form>
+							<input type="hidden" name="page" value="subscripcion" />
+							<div class="fechas">
+								<div class="input-daterange input-group" id="datepicker">
+									<input type="text" class="input-sm form-control" name="start" />
+									<span class="input-group-addon">to</span>
+									<input type="text" class="input-sm form-control" name="end" />
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary btn-md">Reload</button>
+						</form>
+					</div>
+				</div>				
+			</div>
+
+			<?php
+				if($pag_tot > 1 ):
+			?>
+
+				<div class="paginacion">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+
+								<?php
+									echo "<span style='display:none;'>";
+										//var_dump($pgdLinkBase);
+									echo "</span>";
+
+									//ajx_programas( $pgdActual, $pgdPorPagina, $pgdPostParent, $pgdRango, $pgdLinkBase );
+
+									//-- Paginacion
+									$paginacion	=  self::paginacion($pag_act, $pag_tot, $pag_ran, $pag_base);
+									echo $paginacion;
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php
+				endif;
+			?>
+
 			<div class="registros">
 				<table class="wp-list-table widefat post fixed" cellspacing="0">
 					<thead>
 						<tr>
 							<th class="numero">#</th>
-							<th>Last Name, Nombre</th>
-							<th>Tema Interés</th>
-							<th>Teléfono</th>
+							<th>First Name</th>
+							<th>Last Name</th>
 							<th>Email</th>
-							<th>Asunto</th>
-							<th>Fecha Creación</th>
+							<th>Message</th>
+							<th>Fecha Creación (aaaa/mm/dd hh:mm:ss)</th>
 							<!--<th>Control</th>-->
 						</tr>
 					</thead>
-<!--
-
-				`nombre` varchar(500) NOT NULL,
-				`apellido` varchar(500) NOT NULL,
-				`tema_interes` varchar(500) NOT NULL,
-				`telefono` varchar(500) NOT NULL,
-				`email` varchar(500) NOT NULL,
-				`asunto` text NOT NULL,
-				`fechacreacion` timestamp NULL DEFAULT NULL,
--->
 					<tfoot>
 						<tr>
 							<th class="numero">#</th>
-							<th>Last Name, Name</th>
-							<th>Tema Interés</th>
-							<th>Teléfono</th>
+							<th>First Name</th>
+							<th>Last Name</th>
 							<th>Email</th>
-							<th>Asunto</th>
-							<th>Fecha Creación</th>
+							<th>Message</th>
+							<th>Fecha Creación (aaaa/mm/dd hh:mm:ss)</th>
 							<!--<th>Control</th>-->
 						</tr>
 					</tfoot>
@@ -390,9 +735,8 @@ class Contacto {
 							<input name="email" value="<?php echo $registro->email; ?>" type="hidden" />
 
 							<td class="numero"><?php echo $numero; ?></td>
-							<td><?php echo $registro->apellido; ?>, <?php echo $registro->nombre; ?><!--<div class="row-actions"><span class=""><?php echo "data x"; ?></span></div>--></td>
-							<td><?php echo $registro->telefono; ?></td>
-							<td><?php echo $registro->tema_interes; ?></td>
+							<td><?php echo $registro->nombre; ?></td>
+							<td><?php echo $registro->apellido; ?></td>
 							<td><?php echo $registro->email; ?></td>
 							<td><?php echo $registro->asunto; ?></td>
 							<td><?php echo $registro->fechacreacion; ?></td>
@@ -404,7 +748,69 @@ class Contacto {
 					?>
 				</table>
 			</div>
+
+			<?php
+				if($pag_tot > 1 ):
+			?>
+				<div class="paginacion">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+
+								<?php
+									echo "<span style='display:none;'>";
+										//var_dump($pgdLinkBase);
+									echo "</span>";
+
+									//ajx_programas( $pgdActual, $pgdPorPagina, $pgdPostParent, $pgdRango, $pgdLinkBase );
+
+									//-- Paginacion
+									$paginacion	=  self::paginacion($pag_act, $pag_tot, $pag_ran, $pag_base);
+									echo $paginacion;
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php
+				endif;
+			?>
+
 		</div>
+		<script>
+
+			jQuery(document).ready(<?php echo self::$SLUG; ?>_ready);
+			function <?php echo self::$SLUG; ?>_ready(){
+				//-- 
+				jQuery('.input-daterange').datepicker({
+					format: "yyyy/mm/dd",
+					startView: 1,
+					todayBtn: true,
+					language: "es",
+					orientation: "top auto",
+					keyboardNavigation: false,
+					forceParse: false,
+					todayHighlight: true,
+					beforeShowDay: 
+					function (date){
+						if (date.getMonth() == (new Date()).getMonth())
+						{
+							switch (date.getDate()){
+								case 4:
+								return {
+									tooltip: 'Example tooltip',
+									classes: 'active'
+								};
+								case 8:
+								return false;
+								case 12:
+								return "green";
+							}
+						}
+					}
+				});
+			}
+		</script>
 	<?php
 	}
 

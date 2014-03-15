@@ -618,7 +618,7 @@ class Subscripcion {
 
 		<div class="wrap form-admin">
 			<div class="icon32 icon32-posts-autos" id="icon-edit"><br></div>
-			<h2 class="cabecera"><?php echo self::$PAGADMIN_TITULO; ?>&nbsp;<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Launch</button></h2>
+			<h2 class="cabecera"><?php echo self::$PAGADMIN_TITULO; ?>&nbsp;<!--<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Launch</button>--></h2>
 
 			<!-- Button trigger modal -->
 
@@ -648,7 +648,9 @@ class Subscripcion {
 						<a href="#nofilter" data-toggle="tab">No filter</a>
 					</li>
 					<li>
-						<a href="#date" data-toggle="tab">By Date</a>
+						<!-- 
+							<a href="#date" data-toggle="tab">By Date</a>
+						-->
 					</li>
 				</ul>
 				<!-- Tab panes -->

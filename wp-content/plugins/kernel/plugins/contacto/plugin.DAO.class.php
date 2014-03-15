@@ -18,6 +18,16 @@ class ContactoDAO {
         return $wpdb->get_results("SELECT * FROM $this->table_name WHERE borrado = 0");
     }
 
+    public function getTotalPages($ppp=10){
+        global $wpdb;
+        $res     = $wpdb->get_results("SELECT COUNT(id) AS Total FROM $this->table_name WHERE borrado = 0  ");
+
+        // var_dump($res[0]->Total);
+
+        $paginas = ceil((int)$res[0]->Total / $ppp);
+        return $paginas;
+    }
+
     public function existe($email){
         global $wpdb;
         $obj = $wpdb->get_var("SELECT COUNT(*) FROM $this->table_name WHERE email = '$email'");
